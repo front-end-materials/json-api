@@ -6,6 +6,11 @@
   <title>JSON APIs: solar weather data</title>
 </head>
 <style>
+  body { font-size: 1.25em;}
+  button {
+    cursor: pointer;
+    font-size: inherit;
+  }
   .showData {
     opacity: 0;
     transition: all 3s ease 0s;
@@ -13,7 +18,7 @@
 </style>
 <body>
 
-  <button id="getData" style="cursor:pointer">Give me some solar data!</button>
+  <button id="getData">Give me some solar data!</button>
 
   <p id="showData" class="showData"></p>
 
