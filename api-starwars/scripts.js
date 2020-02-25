@@ -19,7 +19,7 @@ function getFilms(films) {
 
   films.forEach( item => {
     const content = 
-      `<dt>${item.episode_id}. ${item.title}</dt>
+      `<dt>${item.episode_id}. ${item.title}<small>Producer: ${item.producer}</small></dt>
        <dd>${item.opening_crawl}</dd>`;
     showData.insertAdjacentHTML("beforeend", content);
   });
