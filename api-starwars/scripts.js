@@ -22,8 +22,8 @@ function getFilms(films) {
     const preamble = document.createElement("dd");
     const content = document.createTextNode(`${item.episode_id}. ${item.title}`);
     const words = document.createTextNode(item.opening_crawl);
-    preamble.appendChild(words);
     title.appendChild(content);
+    preamble.appendChild(words);
     showData.appendChild(title);
     showData.appendChild(preamble);
   }
