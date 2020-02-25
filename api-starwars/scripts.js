@@ -16,13 +16,13 @@ function getFilms(films) {
     .map(film => `${film.episode_id}. ${film.title}`);
   console.log(films);
   showData.innerText = "";
-  films.forEach(listFilm);
-  function listFilm(item, index) {
+  films.forEach( item => {
     const content = 
       `<dt>${item.episode_id}. ${item.title}</dt>
        <dd>${item.opening_crawl}</dd>`;
     showData.insertAdjacentHTML("beforeend", content);
-  }
+    
+  });
 }
 // function getFilms(films) {
 //   films
