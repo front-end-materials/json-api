@@ -1,9 +1,5 @@
-# An API demo with solar data
+# An API demo using a Star Wars films API
 
-This data from the U.S. [National Oceanic and Atmospheric Administration](https://www.noaa.gov/) come in nested arrays.
+This data from an [Eggheads tutorial API](https://starwars.egghead.training/films) and has plenty of data to experiment with.
 
-The data is refreshed every minute, but you need to relaod for this demo.
-
-The demo gets the data heading titles and the most recent figures.
-
-See the [live solar data page here](https://front-end-materials.github.io/json-api/api-solar-data/).
+NOTE: the code is **not** from the tutorial.
