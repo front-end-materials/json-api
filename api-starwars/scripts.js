@@ -7,6 +7,7 @@ showData.innerText = "Loading…";
 fetch(API_URL + "films")
   .then(response => response.json())
   .then(films => {
+    console.log(films);
     getFilms(films);
   })
 
@@ -14,7 +15,6 @@ function getFilms(films) {
   films
     .sort((a, b) => a.episode_id - b.episode_id)
     .map(film => `${film.episode_id}. ${film.title}`);
-  console.log(films);
   showData.innerText = "";
 
   films.forEach( item => {
