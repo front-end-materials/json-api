@@ -12,11 +12,21 @@ const gitHubUsers = ["fania", "daveeveritt", "ggstuart"]
 //   headers: { 'Authorization': 'Basic ' + auth }
 // }
 
+// const getUserAsync = async (name) => {
+//   // let response = await fetch(`${API_URL}${name}`, options);
+//   let response = await fetch(`${API_URL}${name}`);
+//   let data = await response.json();
+//   return data;
+// }
+
 const getUserAsync = async (name) => {
-  // let response = await fetch(`${API_URL}${name}`, options);
-  let response = await fetch(`${API_URL}${name}`);
-  let data = await response.json();
-  return data;
+  try {
+    let response = await fetch(`${API_URL}${name}`);
+    let data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 const showUsers = (user) => {
