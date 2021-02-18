@@ -1,22 +1,7 @@
 "use strict";
 
 const API_URL = "https://api.github.com/users/";
-const gitHubUsers = ["thomcorah", "fania", "daveeveritt", "ggstuart"]
-
-// user and token excluded from public repo!
-// const creds = `${user}:${token}`;
-// const auth = btoa(creds);
-
-// const options = {
-//   mode: 'cors',
-//   headers: { 'Authorization': 'Basic ' + auth }
-// }
-
-// const getUserAsync = async (name) => {
-//   let response = await fetch(`${API_URL}${name}`, options);
-//   let data = await response.json();
-//   return data;
-// }
+const gitHubUsers = ["thomcorah", "daveeveritt", "fania", "ggstuart"]
 
 const getUserAsync = async (name) => {
   try {
@@ -54,3 +39,18 @@ getUserAsync(person)
     showUsers(data);
   })
 });
+
+// user and token excluded from public repo:
+// const creds = `${user}:${token}`;
+// const auth = btoa(creds);
+
+// const options = {
+//   mode: 'cors',
+//   headers: { 'Authorization': 'Basic ' + auth }
+// }
+
+// const getUserAsync = async (name) => {
+//   let response = await fetch(`${API_URL}${name}`, options);
+//   let data = await response.json();
+//   return data;
+// }
