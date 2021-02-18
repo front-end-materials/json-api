@@ -20,17 +20,12 @@ function getFilms(films) {
   films.forEach( item => {
     const content = 
       `<dt>${item.episode_id}. ${item.title}
-       <small>Producer: ${item.producer}</small></dt>
+         <small>Producer: ${item.producer}</small></dt>
        <dd>${item.opening_crawl}</dd>`;
     showData.insertAdjacentHTML("beforeend", content);
   });
 }
 // function getFilms(films) {
-//   films
-//     .sort((a, b) => a.episode_id - b.episode_id)
-//     .map(film => `${film.episode_id}. ${film.title}`);
-//   console.log(films);
-//   showData.innerText = "";
 //   films.forEach(listFilm);
 //   function listFilm(item, index) {
 //     const title = document.createElement("dt");

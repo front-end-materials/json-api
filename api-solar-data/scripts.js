@@ -15,9 +15,10 @@ fetch("https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.js
   })
 
 const showDataFunction = () => {
-  showData.innerHTML = `<strong>Time:</strong> ${jsonData[1][0]}<br>
-                        <strong>K index:</strong> ${jsonData[1][1]}<br>
-                        <strong>distance of solar wind:</strong> ${jsonData[1][2]}`;
+  showData.innerHTML = 
+    `<strong>Time:</strong> ${jsonData[1][0]}<br>
+    <strong>K index:</strong> ${jsonData[1][1]}<br>
+    <strong>distance of solar wind:</strong> ${jsonData[1][2]}`;
   showData.style.opacity = "1";
 }
 
