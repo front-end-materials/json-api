@@ -1,7 +1,7 @@
 "use strict";
 
 const API_URL = "https://api.github.com/users/";
-const gitHubUsers = ["thomcorah", "daveeveritt", "fania", "ggstuart"]
+const gitHubUsers = ["thomcorah", "daveeveritt", "fania", "ggstuart"];
 
 const getUserAsync = async (name) => {
   try {
@@ -29,6 +29,8 @@ const showUsers = (user) => {
     </section>`;
   showData.insertAdjacentHTML("beforeend", content);
 }
+// Add another property to the above:
+          // <li>Public repos: ${user.public_repos}</li>
 
 showData.innerText = "";
 
