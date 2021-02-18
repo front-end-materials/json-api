@@ -4,19 +4,19 @@ let jsonData;
 
 fetch("https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json")
   .then(function (response) {
-    // checks if received okay:
+    // checks if data is received okay:
     console.log(`response: ${response.status}`);
     return response.json();
   })
   .then(function(data) {
-    // assigns the data to a variable
     console.log(data);
+    // assigns the data to a variable:
     jsonData = data;
   })
 
 const showDataFunction = () => {
   showData.innerHTML = 
-    `<strong>Time:</strong> ${jsonData[1][0]}<br>
+   `<strong>Time:</strong> ${jsonData[1][0]}<br>
     <strong>K index:</strong> ${jsonData[1][1]}<br>
     <strong>distance of solar wind:</strong> ${jsonData[1][2]}`;
   showData.style.opacity = "1";
