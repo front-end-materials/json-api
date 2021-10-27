@@ -1,30 +1,37 @@
 "use strict";
 
-let jsonData;
+let jsonData, dataLength, dateTime;
 
-fetch("https://services.swpc.noaa.gov/products/geospace/planetary-k-index-dst.json")
+fetch("https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json")
   .then(function (response) {
-    // checks if data is received okay:
+    // if data is received okay, this will be '200':
     console.log(`response: ${response.status}`);
     return response.json();
   })
   .then(function(data) {
+    // displays the data structure in the console:
     console.log(data);
     // assigns the data to a variable:
     jsonData = data;
   })
-
+  
 const showDataFunction = () => {
+  // stores a reference to most recent data at the end of array:
+  dataLength = jsonData.length-1;
+
+  // removes milliseconds from the time:
+  dateTime = jsonData[dataLength][0].substring(0, 19);
+
+  // displays data in HTML page:
   showData.innerHTML = 
-   `<strong>Time:</strong> ${jsonData[1][0]}<br>
-    <strong>K index:</strong> ${jsonData[1][1]}<br>
-    <strong>distance of solar wind:</strong> ${jsonData[1][2]}`;
+   `<strong>Date/time:</strong> ${dateTime}<br>
+    <strong>Disturbance (K index):</strong> ${jsonData[dataLength][2]}`;
   showData.style.opacity = "1";
 }
 
 getData.addEventListener("click", showDataFunction);
 
-// single data extract for testing: 
+// single data extract from old testing data: 
 // let jsonData = [
 // ["time_tag", "planetary_k_index", "dst"],
 //   [
